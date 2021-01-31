@@ -1,0 +1,482 @@
+*, ::before, ::after{
+    /* overflow: auto; */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* background-color: #8BA1BB; */
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    height: 100vh;
+    position: relative;
+}
+
+
+/*################################# Nav Bar  #################################*/
+
+/*--------- Navigation ---------*/
+
+nav {
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    background: rgb(223, 209, 209);
+    border-bottom: 1px dotted #f1f1f1;
+    background: linear-gradient(to bottom, #333, #626262);
+    z-index: 100;
+}
+.logo-menu {
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    width: 50px;
+    z-index: 250;
+    display: none;
+}
+
+.liste-nav {
+    background: #333;
+    background: linear-gradient(to bottom, #333, #626262);
+    border-bottom: 1px dotted #f1f1f1;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    position: fixed;
+    z-index: 200;
+}
+.item-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.item-nav a {
+    font-size: 25px;
+    color: #f1f1f1;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+.item-nav a::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 0%;
+    height: 2px;
+    background: #f1f1f1;
+    transition: all 0.2s ease-in-out;
+}
+.item-nav a:hover::after {
+    width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+
+    .logo-menu {
+        display: block;
+    }
+    .liste-nav {
+        display: none;
+        flex-direction: column;
+        height: auto;
+    }
+    .liste-nav.active {
+        display: block;
+    }
+    .item-nav {
+        height: 70px;
+    }
+    .item-nav:nth-child(1){
+        margin-top: 70px;
+    }
+
+}
+
+
+/*############################## animation texte  ############################*/
+.container ul {
+    position: relative;
+    text-align: center;
+    top: 8px;
+    /* text-decoration: none; */
+}
+.container ul li {
+    display: inline-block;
+    list-style-type: none;
+    color: #484848;
+    font-size: 140%;
+    letter-spacing: 10px;
+    animation: flash 1.4s linear infinite;
+}
+
+@keyframes flash {
+    0% {
+        color: #484848;
+        text-shadow: none;
+    }
+    90% {
+        color: #484848;
+        text-shadow: none;
+    }
+    100% {
+        color:#fffb05;
+        text-shadow: 0 0 7px #fff900, 0 0 50px #ff6c00;
+    }
+}
+ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+ul li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+ul li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+ul li:nth-child(6) {
+    animation-delay: 0.6s;
+}
+ul li:nth-child(7) {
+    animation-delay: 0.7s;
+}
+ul li:nth-child(8) {
+    animation-delay: 0.8s;
+}
+ul li:nth-child(9) {
+    animation-delay: 0.9s;
+}
+ul li:nth-child(10) {
+    animation-delay: 0.10s;
+}
+/*################################# Container  #################################*/
+
+.container {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    background: linear-gradient(180deg, #6C829D 0%, rgba(224, 37, 206, 0.79) 93.75%);
+    display: grid;
+    grid-gap: 10px;
+    justify-items: center;
+}
+
+/*-------------- Box 3 colonne  --------------*/
+.box{
+    background: rgba(131, 184, 245, 0.5);
+    width: 95%;
+    height: 225px;
+
+    display: grid;
+    grid-template-rows: 81px 142px;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+
+    grid-auto-columns: auto; 
+    border-radius: 35px;  
+}
+
+/*-------------- Box 2 colonne--------------*/
+.reporting{
+    margin: 74px auto 0; 
+    grid-template-columns: 50% 50%; 
+}
+
+
+/*-------------- Titre Box  --------------*/
+.titre-box{
+    background: rgba(196, 196, 196, 0.3);
+    width: 95%;
+    height: 39px;
+    justify-self: center;
+    align-self: center;
+    grid-column: 1/4;
+    border-radius: 10px;
+}
+
+
+
+/*################################# Text et lien Bouton-3D #################################*/
+/*-------------- (Text Bouton 3D)  --------------*/
+.bouton-3D p {
+    display: inline-block;
+    font-size: 140%;
+
+    color: white;
+    letter-spacing: 1px;
+    text-decoration: none;
+    grid-column: 1/3;
+}
+.bouton-3D a {
+    font-size: 22px;
+    color: #f1f1f1;
+    text-decoration: none;
+    margin: 0 20px;
+    letter-spacing: 1px;
+}
+
+/*-------------- (Grid Bouton 3D)  --------------*/
+.bouton-3D {
+    width: 80%;
+    border-radius: 20px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0 6px violet;
+    background: rgba(196, 196, 196, 0.3);
+    border-radius: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+
+    justify-items: center;
+    align-items: center;
+    
+    justify-self: center;
+    align-self: center;
+    list-style-type: none;
+
+}
+
+.bouton-journalier, .bouton-moyen {
+    width: 70%;
+}
+/*-------------- (Effet Bouton 3D)  --------------*/
+.bouton-3D:hover {
+    box-shadow: 0 4px violet;
+    top: 2px;
+}
+.bouton-3D:active {
+    box-shadow: 0 4px violet;
+    top: 6px;
+}
+
+/*################################# Bouton Menu déroulante #################################*/
+.deco-list {
+    width: 100%;
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    height: auto;
+    margin-top: 26px;
+    
+}
+
+.deco-list.active {
+    width: 170%;
+    background: rgb(75, 155, 247);
+
+
+    border-radius: 10%; 
+    border: 10px solid black;
+    border-top: 15px;
+    border-bottom: 15px;
+
+    display: flex;
+    grid-row-gap: 16px;
+    justify-content: center;
+
+    align-self: safe center;
+    align-items: center;
+    
+}
+
+.deco-list p{
+    text-align: center;
+    color: black;
+    z-index: 1000;
+    flex-direction: column;
+}
+
+.deco-list {
+    z-index: 1000;
+    flex-direction: column;
+    height: auto;
+}
+
+/*################################# Contenu Bouton  #################################*/
+
+.deco-contenu a::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 0%;
+    height: 2px;
+    background: #f1f1f1;
+    transition: all 0.2s ease-in-out;
+}
+.deco-contenu a:hover::after {
+    width: 100%;
+}
+
+.deco-contenu {
+    height: 70px;
+}
+.deco-contenu:nth-child(1){
+    margin-top: 30px;
+}
+
+.deco-contenu.active {
+    display: grid;
+    grid-row-gap: 16px;
+}
+
+
+.deco-contenu a{
+    color: black;
+}
+.deco-contenu {
+    width: 100%;
+    height: 70px;
+    color: black;
+    background: rgba(196, 196, 196, 0.3);
+    z-index: 1000;
+    cursor: pointer;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/*################################# box reporting #################################*/
+
+/*-------------- Bouton journalier  --------------*/
+
+.list-journalier.active {
+    justify-self: flex-start;
+}
+/*-------------- Bouton moyen  --------------*/
+.list-moyen.active {
+    justify-self: flex-end;
+}
+
+/*############################ stock ############################ */
+/*-------------- Bouton ajoutstock --------------*/
+.list-ajoutstock.active {
+    justify-self: self-start;
+}
+/*-------------- Bouton inventaire --------------*/
+.list-inventaire.active {
+    justify-self: flex-end;
+}
+
+/*-------------- Bouton recharge --------------*/
+.list-recharge.active {
+    justify-self: auto;
+}
+
+/*################################# box administatrion #################################*/
+
+/*-------------- Bouton Annonce direction  --------------*/
+.list-annoncedirection.active {
+    justify-self: auto;
+
+}
+
+/*-------------- Bouton incident  --------------*/
+.list-incident.active {
+    justify-self: flex-end;
+}
+
+/*################################# box test #################################*/
+/*-------------- Bouton qcm  --------------*/
+.list-qcm.active {
+    justify-self: flex-start;
+    
+    margin-top: -404px;
+}
+
+/*-------------- Bouton astuce  --------------*/
+.contenu-astuce {
+    height: 40px;
+}
+
+.list-astuce.active {
+    justify-self: auto;
+    margin-top: -300px;
+}
+
+/*-------------- Bouton question  --------------*/
+.contenu-question {
+    height: 40px;
+
+}
+
+.list-question.active {
+    justify-self: flex-end;
+    margin-top: -300px;
+}
+
+/*################################# Media  #################################*/
+@media (max-width: 650px) {
+
+    .list-incident.active, .list-question.active, .list-inventaire.active {
+        position: relative;
+        right: 34px;
+    }
+
+    .list-annoncedirection.active, .list-qcm.active, .list-ajoutstock.active {
+        position: relative;
+        left: 37px;
+    }    
+}
+
+@media (max-width: 584px) {
+    .titre-box {
+        font-size: 12px;
+    }
+
+    .declaration, .stock, .test{
+        grid-template-rows: 81px 70px 60px;
+    }
+
+    .bouton-presence , .bouton-qcm, .bouton-ajoutstock {
+        grid-column: 1/2;
+        grid-row: 3/4;
+        font-size: 16px;
+    }
+
+    .bouton-incident, .bouton-inventaire, .bouton-question {
+        grid-column: 3/4;
+        grid-row: 3/4;
+    }
+
+    .bouton-annoncedirection, .bouton-astuce, .bouton-recharge {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+
+    .bouton-3D {
+        width: 92%;
+        font-size: 12px;
+    }
+
+    .bouton-3D a {
+        font-size: 18px;
+    }
+
+    .list-annoncedirection.active {
+        left: 0;
+    } 
+    .list-presence.active {
+        position: relative;
+        left: 37px;
+        justify-self: flex-start;
+    } 
+}
+
+
+

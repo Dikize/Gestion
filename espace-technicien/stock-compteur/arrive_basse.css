@@ -1,0 +1,462 @@
+@charset "UTF-8";
+*, ::before, ::after {
+	/* overflow: auto; */
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/*################################# Nav Bar  #################################*/
+body {
+	background-color: whitesmoke;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	height: 100vh;
+	padding-top: 1px solid; 
+
+}
+
+.inutile{ 
+	opacity: 1%;
+}
+
+/*################################# Nav Bar  #################################*/
+nav {
+	position: fixed;
+	height: 70px;
+	width: 100%;
+	background: rgb(223, 209, 209);
+	border-bottom: 1px dotted #f1f1f1;
+	background: linear-gradient(to bottom, #333, #626262);
+	z-index: 100;
+}
+
+.logo-menu {
+	position: fixed;
+	top: 10px;
+	right: 15px;
+	width: 50px;
+	z-index: 250;
+	display: none;
+}
+
+.liste-nav {
+	background: #333;
+	background: linear-gradient(to bottom, #333, #626262);
+	border-bottom: 1px dotted #f1f1f1;
+	height: 70px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	list-style-type: none;
+	position: fixed;
+	z-index: 200;
+}
+.item-nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.item-nav a {
+	font-size: 25px;
+	color: #f1f1f1;
+	text-decoration: none;
+	margin: 0 20px;
+}
+
+.item-nav a::after {
+	content: '';
+	display: block;
+	margin: 0 auto;
+	width: 0%;
+	height: 2px;
+	background: #f1f1f1;
+	transition: all 0.2s ease-in-out;
+}
+.item-nav a:hover::after {
+	width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+
+	.logo-menu {
+			display: block;
+	}
+	.liste-nav {
+			display: none;
+			flex-direction: column;
+			height: auto;
+	}
+	.liste-nav.active {
+			display: block;
+	}
+	.item-nav {
+			height: 70px;
+	}
+	.item-nav:nth-child(1){
+			margin-top: 70px;
+	}
+
+}
+
+/*############################## Contenu  ############################*/
+
+.contain{
+	height: 628px;
+	background: linear-gradient(180deg, #6C829D 0%, rgba(224, 37, 206, 0.79) 100%);
+	
+    background: rgb(185, 178, 178);
+
+    margin-top: 50px;
+    display: grid;
+	justify-content: center;
+	
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+	grid-template-rows: 50px 350px 70px 70px;
+    grid-row-gap: 20px;
+}
+
+/*############################## animation texte  ############################*/
+
+.contenu-titre ul {
+	text-align: center;
+	display:block;
+	justify-items: center;
+	
+	/* text-decoration: none; */
+}
+
+
+.contenu-titre ul li {
+	display: inline-block;
+	list-style-type: none;
+	color: #484848;
+	font-size: 3vh;
+	letter-spacing: 10px;
+	animation: flash 1.4s linear infinite;
+}
+
+@keyframes flash {
+	0% {
+		color: #484848;
+		text-shadow: none;
+	}
+	90% {
+		color: #484848;
+		text-shadow: none;
+	}
+	100% {
+		color: #fffb05;
+		text-shadow: 0 0 7px #fff900, 0 0 50px #ff6c00;
+	}
+}
+ul li:nth-child(1) {
+	animation-delay: 0.1s;
+}
+
+ul li:nth-child(2) {
+	animation-delay: 0.2s;
+}
+
+ul li:nth-child(3) {
+	animation-delay: 0.3s;
+}
+
+ul li:nth-child(4) {
+	animation-delay: 0.4s;
+}
+
+ul li:nth-child(5) {
+	animation-delay: 0.5s;
+}
+
+ul li:nth-child(6) {
+	animation-delay: 0.6s;
+}
+
+ul li:nth-child(7) {
+	animation-delay: 0.7s;
+}
+
+ul li:nth-child(8) {
+	animation-delay: 0.8s;
+}
+
+ul li:nth-child(9) {
+	animation-delay: 0.9s;
+}
+
+ul li:nth-child(10) {
+	animation-delay: 0.1s;
+}
+
+/*############################## Tableau  ############################*/
+.tableau{
+	background: rgb(185, 178, 178);
+	width: 100%;
+
+	grid-column: 1/6;
+	grid-row: 2/3;
+}
+
+.tableau-style {
+	border-collapse: collapse;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	border: 1px solid #ddd;
+	grid-column: 1/6;
+	
+}
+
+thead tr {
+	border-radius: 20px;
+	background-color: midnightblue;
+	color: #fff;
+	text-align: center;
+}
+
+th, td {
+	padding: 8px 33px;
+	text-align: center;
+	font-size: 13px;
+}
+
+tbody tr, td {
+	border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+	background: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+	border-bottom: 2px solid midnightblue;
+}
+
+/*---------------------- Titre  ----------------------*/
+
+.contenu-titre {
+	width: 164%;
+	font-size: 372%;
+
+	grid-column: 2/5;
+	grid-row: 1/2;
+	justify-self: center;
+	align-self: center;
+}
+
+/*############################## saisie  ############################*/
+.Box-saisie{
+	width: 100%;
+	height: 100px;
+
+	grid-row: 3/4;
+	grid-column: 1/6;
+	
+	display: grid;
+	grid-template-columns: 19% 24% 22% 17% 22%;
+
+	justify-content: space-evenly;
+	justify-items: center;
+	align-items: center;
+}
+
+/* ( contenu Box-saisie ) */
+.contenu{
+	width: 50%;
+
+	display: grid;
+	justify-items: center;
+	justify-content: center;
+}
+
+/* ( contenu  ) */
+.txt{
+	font-size: 18px;
+	position: relative;
+	bottom: 26%;
+}
+
+
+/* ( Quantité ) */
+.Quantité input {
+	width: 130%;
+	height: 20px;
+	font-size: 16px;
+}
+
+/* ( reference ) */
+.reference input {
+	width: 130%;
+	height: 20px;
+	font-size: 16px;
+}
+
+/*############################## bouton  ############################*/
+.Box-bouton{
+	width: 100%;
+	height: 70px;
+
+	grid-row: 4/5;
+	grid-column: 1/6;
+	display: grid;
+	grid-template-columns: 33.3% 33.3% 33.3%;
+	
+
+}
+
+
+.Valide{
+	grid-column: 2/3;
+	justify-self: center;
+	align-self: center;
+}
+
+.recla{
+	grid-column: 1/2;
+	justify-self: center;
+	align-self: center;
+}
+
+.demande{
+	grid-column: 3/4;
+	justify-self: center;
+	align-self: center;
+}
+
+/*################################# Text et lien Bouton-3D #################################*/
+.bouton-3D {
+    border-radius: 20px;
+    width: 72%;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0 6px violet;
+    background: rgba(196, 196, 196, 0.3);
+    justify-self: center;
+    align-self: center;
+}
+
+.bouton-3D a {
+    display: inline-block;
+    font-size: 120%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+/*-------------- (Bouton 3D)  --------------*/
+.bouton-3D:hover {
+    box-shadow: 0 4px violet;
+    top: 2px;
+}
+.bouton-3D:active {
+    box-shadow: 0 4px violet;
+    top: 6px;
+}
+
+
+/*################################# Media  #################################*/
+
+
+@media (max-width: 616px) {
+    .bouton-3D a {
+		font-size: 100%;
+	}
+
+	.txt {
+		font-size: 16px;
+	}
+
+	th, td {
+		padding: 0;
+		text-align: center;
+		font-size: 13px;
+	}
+
+
+	.contenu-titre {
+		font-size: 38px;
+	}
+}
+
+@media (max-width: 616px) {
+    .bouton-3D a {
+		font-size: 90%;
+	}
+
+	/* (  ) */	
+	.reference input {
+		width: 100%;
+		font-size: 90%;
+	}
+
+}
+
+@media (max-width: 579px) {
+
+	.Marque select {
+		width: 143%;
+	}
+
+}
+
+
+@media (max-width: 542px) {
+	.Marque select {
+		width: 123%;
+	} 
+
+	.bouton-3D {
+		width: 79%;
+	}
+}
+
+
+@media (max-width: 430px) {
+	/* (  ) */
+	.bouton-3D a {
+		font-size: 80%;
+	}
+
+	/* (  ) */
+	.txt {
+		font-size: 14px;
+	}
+
+	/* (  ) */
+	.Marque select {
+		width: 100%;
+	} 
+
+	/* (  ) */	
+	.reference input, .Quantité input {
+		width: 83%;
+		font-size: 72%;
+	}
+	/* ( Text titre lumineux ) */
+	.contenu-titre {
+		font-size: 0px;
+	}
+}
+
+
+@media (max-width: 366px) {
+	.txt {
+		font-size: 12px;
+	}
+
+	th, td {
+		font-size: 12px;
+	}
+
+	.Marque select {
+		width: 119%;
+	} 
+}
+
+
